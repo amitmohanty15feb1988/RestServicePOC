@@ -1,0 +1,54 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Resource",
+    "description" : "Resource service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/resource" : {
+      "get" : {
+        "summary" : "getResource",
+        "description" : "getResource",
+        "operationId" : "get-resource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "fname",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "lname",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a EmpResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/EmpResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "EmpResponse" : {
+      "type" : "object",
+      "required" : [ "fullname" ],
+      "properties" : {
+        "fullname" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
